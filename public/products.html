@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jolt's Products</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="products.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="top-header">
+      <p>New Season Coming! Discount 10% for all products! Check out now!</p>
+      <p class="header-time">20 : 48</p>
+    </header>
+
+    <div class="message">
+      <h1>Jolt Clothing Collection</h1>
+      <p>
+        Find everything you need to look and feel your best, and shop our latest
+      </p>
+      <p>fashion and lifestyle products.</p>
+    </div>
+
+    <div class="card-list" id="card-list"></div>
+  </body>
+  <script>
+    const cardList = document.getElementById("card-list");
+
+    fetch("http://localhost:3000/products")
+      .then((res) => {
+        if (!res.ok) {
+          // Check for HTTP errors (status outside 200-299)
+          throw new Error(`HTTP error! status: ${res.status}`); // Throw error for non-2xx status
+        }
+        return res.json(); // Proceed if the response is ok
+      })
+      .then((data) => {
+        // Data is now available, create cards
+        data.forEach((product) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          card.innerHTML = `
+        <div class="image-section">
+          <img src="${product.image}" alt="${product.key}" />
+          <i class="fa-regular fa-heart"></i>
+          ${product.label ? `<p>${product.label}</p>` : ""} </div>
+        <div class="information">
+          <div>
+            <p class="name">${product.name}</p>
+            <p class="price">$ ${product.price.toFixed(2)}</p>
+          </div>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      `;
+
+          cardList.appendChild(card);
+        });
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+        // Optionally display an error message to the user
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent =
+          "Error loading products. Please try again later.";
+        cardList.appendChild(errorMessage); // Or display it in a designated error area
+      });
+  </script>
+</html>

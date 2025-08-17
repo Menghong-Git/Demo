@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "name": "Lady Gaga",
+      "username": "ironman",
+      "password": "new@password",
+      "id": 1737115078363
+    },
+    {
+      "name": "Peter Parker",
+      "username": "spiderman",
+      "password": "12345678",
+      "id": 1737635641653
+    },
+    {
+      "name": "Pheakdey",
+      "username": "handsomeboy",
+      "password": "12345678",
+      "id": 1737637087680
+    },
+    {
+      "name": "You Tube",
+      "username": "youtube",
+      "password": "12345678",
+      "id": 1737638264159
+    }
+  ],
+  "products": [
+    {
+      "name": "Airpod Pro 3",
+      "image": "assets/airpod.avif",
+      "price": 120,
+      "label": "Limited",
+      "key": "airpod-3"
+    },
+    {
+      "name": "Amazon Echo 5",
+      "image": "assets/amazon-echo.avif",
+      "price": 420,
+      "label": "Limited",
+      "key": "amazon-echo-5",
+      "id": 1738242157741
+    }
+  ],
+  "notes": [
+    {
+      "description": "Read 10 pages this morning",
+      "completed": true,
+      "userId": 1737637087680,
+      "id": 1738846353388
+    },
+    {
+      "description": "Eat Breakfast",
+      "completed": true,
+      "userId": 1737637087680,
+      "id": 1738846365722
+    },
+    {
+      "description": "Create a new vlog",
+      "completed": false,
+      "userId": 1737638264159,
+      "id": 1738846409537
+    },
+    {
+      "description": "Edit 2 Videos",
+      "completed": true,
+      "userId": 1737638264159,
+      "id": 1738846417357
+    },
+    {
+      "description": "Post video to youtube",
+      "completed": false,
+      "userId": 1737638264159,
+      "id": 1738847476759
+    }
+  ]
+}

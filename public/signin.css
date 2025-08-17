@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.login-section {
+  flex: 1;
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.password-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 10px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3b5323;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #2f421b;
+}
+
+.signup-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.container img {
+  width: 50%;
+  object-fit: cover;
+  border-radius: 2.5rem 0 0 2.5rem;
+}

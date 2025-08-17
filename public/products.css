@@ -1,0 +1,44 @@
+.top-header {
+  height: 1.875rem;
+  display: flex;
+  font-size: 0.875rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background-color: black;
+  color: white;
+}
+
+.header-time {
+  background-color: white;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  color: black;
+  border-radius: 1.875rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2% 3% 5% 3%;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.message h1 {
+  margin-bottom: 1.5rem;
+}
+
+.message p {
+  margin-top: 0.6rem;
+}

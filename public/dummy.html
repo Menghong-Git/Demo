@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <input type="checkbox"/>
+  </body>
+  <script>
+    const container = document.getElementById("test");
+    const notes = fetch("http://localhost:3000/notes", {
+      method: "GET",
+      headers: {
+        username: "handsomeboy",
+        password: 12345678,
+        "Content-Type": "application/json",
+      },
+    }).then((res) => {
+      res.json().then((notes) => {
+        if (notes.length === 0) {
+          const p = document.createElement("p");
+          p.textContent = "Empty";
+          container.appendChild(p);
+        } else {
+          notes.forEach((note) => {
+            console.log(note);
+            const div = document.createElement("div");
+            div.style.display = "flex";
+            const checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox")
+            const desc = document.createElement("p");
+            desc.textContent = note.description;
+            div.appendChild(checkbox);
+            div.appendChild(desc);
+            if (note.completed) {
+                desc.style.textDecorationLine = "line-through";
+                checkbox.checked = true;
+            }
+            container.appendChild(div);
+          });
+        }
+      });
+    });
+  </script>
+</html>

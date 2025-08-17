@@ -1,0 +1,16 @@
+{
+  "name": "learn-express",
+  "version": "0.0.1",
+  "description": "Basic Express",
+  "license": "ISC",
+  "author": "Visal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "lowdb": "^7.0.1"
+  }
+}

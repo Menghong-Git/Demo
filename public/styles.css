@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.top-header {
+  height: 1.875rem;
+  display: flex;
+  font-size: 0.875rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.header-time {
+  background-color: black;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  color: white;
+  border-radius: 1.875rem;
+}
+
+.hero {
+  min-height: 70vh;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 10%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("./assets/home.avif") no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2% 3% 5% 3%;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.hero-information {
+  display: flex;
+  gap: 3rem;
+  flex-grow: 4;
+}
+
+.hero-logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-functions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.hero-functions a {
+  color: white;
+}
+
+.hero-message {
+  align-self: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-message h2 {
+  font-size: 5rem;
+}
+
+.hero-message p {
+  font-size: 1.1rem;
+}
+
+.btn {
+  align-self: center;
+  background-color: white;
+  padding: 1rem 3rem;
+  border-radius: 1.5rem;
+  color: black;
+  font-size: 1rem;
+}
+
+.btn-black {
+  align-self: center;
+  background-color: black;
+  padding: 0.8rem 4rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.new-arrivals {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0 0 0;
+}
+
+.new-arrivals h2 {
+  font-size: 3rem;
+}
+
+.new-arrivals p {
+  font-size: 1.2rem;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+}
+
+.card {
+  width: 20rem;
+  height: 33rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.card .image-section img {
+  width: 20rem;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  transition: 1s;
+}
+
+.card .image-section img:hover {
+  transform: scale(0.95);
+}
+
+.card .image-section i {
+  position: absolute;
+  right: 1.3rem;
+  top: 1.5rem;
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.card .image-section p {
+  position: absolute;
+  left: 1.3rem;
+  top: 1.5rem;
+  font-size: 0.8rem;
+  color: white;
+  background-color: #CECECE;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+}
+
+.card .information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem
+}
+
+.card .information .name{
+  font-size: 1rem;
+  font-weight: lighter;
+  padding-bottom: 0.3rem;
+}
+
+.card .information .price {
+  font-size: 1.2rem
+}
+
+.card .information i {
+  padding: 0.5rem;
+  border: 0.1rem solid black;
+  border-radius: 50%;
+}
+
+
+.store-information {
+  display: flex;
+  height: 32rem;
+  margin: 4rem 0;
+  padding: 2rem 2rem;
+  gap: 1.5rem;
+}
+
+.store-information .store-image {
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4) 10%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("./assets/store.avif");
+  background-size: cover;
+  border-radius: 0.6rem;
+  flex: 2 1 0;
+}
+
+.store-information .information {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.store-information .information .header h2 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.store-information .information h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.store-information .information p {
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+.store-information .information .btn-black {
+  align-self: flex-start;
+  background-color: black;
+  padding: 0.8rem 4rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1rem;
+}

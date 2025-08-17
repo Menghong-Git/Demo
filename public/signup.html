@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="signin.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-section">
+        <h1>Get Started Now</h1>
+        <br />
+        <br />
+        <form id="login-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div class="form-group">
+            <div class="password-group">
+              <label for="password">Password</label>
+            </div>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="form-group remember-me">
+            <input type="checkbox" id="remember" />
+            <label for="remember">I agree to terms and policies</label>
+          </div>
+          <button type="submit" class="login-button">Signup</button>
+        </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p class="signup-text">
+          Have an account? <a href="/signin.html">Sign In</a>
+        </p>
+      </div>
+      <img src="./assets/leaf.png" />
+    </div>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <script>
+    const myForm = document.getElementById("login-form");
+    const nameInput = document.getElementById("name");
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+
+    myForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      console.log("Name: ", nameInput.value);
+      console.log("Username: ", usernameInput.value);
+      console.log("Password: ", passwordInput.value);
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        body: JSON.stringify({
+          name: nameInput.value,
+          username: usernameInput.value,
+          password: passwordInput.value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response;
+      const responseBody = await response.json();
+      if (data.status !== 201) {
+        Toastify({
+          text: responseBody.message,
+          duration: 3000,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "#ff0000",
+          },
+        }).showToast();
+      } else {
+        window.location.href = "/signin.html";
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="test"></ul>
+</body>
+<script>
+    const todoList = ["Getup", "Shower", "Eat Breakfast"];
+    const ulElement = document.getElementById("test");
+
+    todoList.forEach(t => {
+        const item = document.createElement("li");
+        item.innerHTML = `<a href="https://youtube.com">${t}</a>`
+        ulElement.appendChild(item);
+    });
+</script>
+</html>
